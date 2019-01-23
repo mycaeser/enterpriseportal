@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.enterpriseportal.dao.AboutUsDao">
+	<select id="queryAboutUs" resultType="com.caeser.enterpriseportal.entity.AboutUs">
+		SELECT  aaa202, aaa204
+		FROM aa02
+		WHERE
+		aaa201=1
+	</select>
+	<update id="updateAboutUsa" parameterType="com.caeser.enterpriseportal.entity.AboutUs">
+		update aa02
+		<set>
+			<if test="aaa202 != null">aaa202=#{aaa202}</if>
+		</set>
+		where aaa201=1
+	</update>
+</mapper>
+    
