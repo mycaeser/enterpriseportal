@@ -114,7 +114,7 @@ $(function(){
 		});
 	}
 	if(ma!=null&&ma==4){//显示团队管理
-		var outHtml1='<table border="1"><tr><th>编号</th><th>标题</th><th>日期</th><th>操作</th></tr>';
+		var outHtml1='<table class="imagetable" border="1"><tr><th>编号</th><th>标题</th><th>日期</th><th>操作</th></tr>';
 		var outHtml2='';
 		var outHtml3=' </table>';
 		$.getJSON(getTeamUrl,function(data){
@@ -122,7 +122,7 @@ $(function(){
 			teamObj.map(function(item,data){
 				outHtml2+='<tr><td>'+item.aaa401+'</td><td>'+item.aaa402+'</td><td>'+item.aaa404+'</td><td><a onclick="return confirm(\'请确认删除\');" href="/enterpriseportal/cps/brief?a=4&b=2&c='+item.aaa401+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/enterpriseportal/cps/brief?b=1&c='+item.aaa401+'" >编辑</a></td></tr>';
 			});//a=4团队管理b=1编辑 b=2删除
-			$('.ue-clear').html('<a href="/enterpriseportal/addarticlemodel/addteam?a=1" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
+			$('.ue-clear').html('<div class="blue"><div id="slatenav"><ul><li><a href="/enterpriseportal/addarticlemodel/addteam?a=1" >新增文章</a></li></ul></div></div>'+outHtml1+outHtml2+outHtml3);
 			$('.buttons').html('');
 		});
 		
@@ -218,7 +218,7 @@ $(function(){
 		}
 	}
 	if(ma!=null&&ma==5){//显示荣誉资质
-		var outHtml1='<table border="1"><tr><th>编号</th><th>标题</th><th>日期</th><th>操作</th></tr>';
+		var outHtml1='<table class="imagetable" border="1"><tr><th>编号</th><th>标题</th><th>日期</th><th>操作</th></tr>';
 		var outHtml2='';
 		var outHtml3=' </table>';
 		$.getJSON(getHonorUrl,function(data){
@@ -226,7 +226,7 @@ $(function(){
 			honorObj.map(function(item,data){
 				outHtml2+='<tr><td>'+item.aaa501+'</td><td>'+item.aaa502+'</td><td>'+item.aaa505+'</td><td><a onclick="return confirm(\'请确认删除\');" href="/enterpriseportal/cps/brief?a=5&b=4&c='+item.aaa501+'" >删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/enterpriseportal/cps/brief?b=3&c='+item.aaa501+'" >编辑</a></td></tr>';
 			});//a=5荣誉资质b=3编辑 b=4删除
-			$('.ue-clear').html('<a href="/enterpriseportal/addarticlemodel/addteam?a=2" >新增文章</a><br /><br />'+outHtml1+outHtml2+outHtml3);
+			$('.ue-clear').html('<div class="blue"><div id="slatenav"><ul><li><a href="/enterpriseportal/addarticlemodel/addteam?a=2" >新增文章</a></li></ul></div></div>'+outHtml1+outHtml2+outHtml3);
 			$('.buttons').html('');
 		});	
 	}

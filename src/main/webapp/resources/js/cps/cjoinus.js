@@ -13,8 +13,8 @@ $(function(){
 			outHtml2+='<tr><td>'+numa+'</td><td>'+item.addName+'</td><td>'+item.addContent+'</td><td>'+item.addPhoneOwner+'</td><td>'+item.addPhoneNumber+'</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="changeToInput('+numa+')" >编辑</a></td></tr>';
 			numa++;
 		});//
-		$('#hr-part').html('<a href="/enterpriseportal/addarticlemodel/addteam?a=1" >新增地址</a><br /><br />'+outHtml1+outHtml2);
-		
+		$('#hr-part').html(outHtml1+outHtml2);
+		$('#func-tab').html('<div class="blue"><div id="slatenav"><ul><li><a href="#" >新增地址</a></li></ul></div></div>');
 	});
 	var outHtml3='<tr><th>网站名称</th><th>备案号</th><th>邮箱</th><th>编辑</th></tr><tr>';
 	var outHtml4='';

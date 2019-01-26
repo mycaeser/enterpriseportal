@@ -89,15 +89,16 @@ public class HonorController {
 		}
 		if (commonsMultipartResolver.isMultipart(request)) {
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
-			honorImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("teamFile");
+			honorImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("honorFile");
 		}
 		if(honorImg!=null) {
 			try {
 				ImageHolder imageHolder=new ImageHolder(honorImg.getOriginalFilename(),honorImg.getInputStream());
 				String dest = PathUtil.getImgBasePath();
 				String tmpName=honorDao.queryHonorById(honorId).getAaa503();
+				String extension=tmpName.substring(tmpName.lastIndexOf(".",tmpName.length()));
 				tmpName=tmpName.substring(PathUtil.filePathInDatabase.length(),tmpName.lastIndexOf("."));
-				ImageUtil.copyFile(imageHolder, dest,tmpName);
+				ImageUtil.copyFileA(imageHolder, dest, tmpName, extension);
 			} catch (IOException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());
