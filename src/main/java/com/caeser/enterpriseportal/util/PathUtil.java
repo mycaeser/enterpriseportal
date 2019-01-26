@@ -10,7 +10,7 @@ public class PathUtil {
 		String os = System.getProperty("os.name");
 		String basePath = "";
 		if (os.toLowerCase().startsWith("win")) {
-			basePath = "D:/gxttccimg/v1/";
+			basePath = "D:/eplimg/v1/";
 		} else {
 			basePath = "/home/roofso/image/";
 		}

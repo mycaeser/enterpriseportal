@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.caeser.enterpriseportal.cache.JedisUtil;
 import com.caeser.enterpriseportal.dao.BriefDao;
@@ -26,13 +25,13 @@ public class BriefServiceImpl implements BriefService {
 	private JedisUtil.Strings jedisStrings;
 
 	@Override
-	@Transactional
 	public Brief queryBrief() {
 		// 定义redis的key
-		String key = BRIEFINTRODUCTIONKEY;
+		String key = BRIEF_INTRODUCTION_KEY;
 		// 定义jackson数据转换操作类
 		ObjectMapper mapper = new ObjectMapper();
 		Brief briefItem = null;
+
 		if (!jedisKeys.exists(key)) {
 			// 若不存在，则从数据库里面取出相应数据
 			briefItem = briefDao.queryBrief();
@@ -62,6 +61,7 @@ public class BriefServiceImpl implements BriefService {
 				e.printStackTrace();
 			}
 		}
+
 		return briefItem;
 	}
 }

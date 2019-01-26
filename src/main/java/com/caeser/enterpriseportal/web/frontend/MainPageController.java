@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.caeser.enterpriseportal.dao.AddressDao;
-import com.caeser.enterpriseportal.dao.HonorDao;
 import com.caeser.enterpriseportal.dao.NewsDao;
 import com.caeser.enterpriseportal.entity.Address;
 import com.caeser.enterpriseportal.entity.Brief;
 import com.caeser.enterpriseportal.entity.Honor;
 import com.caeser.enterpriseportal.entity.News;
 import com.caeser.enterpriseportal.entity.Projects;
+import com.caeser.enterpriseportal.service.AddressService;
 import com.caeser.enterpriseportal.service.BriefService;
+import com.caeser.enterpriseportal.service.HonorService;
 import com.caeser.enterpriseportal.service.ProjectsService;
 
 @Controller
@@ -31,11 +31,11 @@ public class MainPageController {
 	@Autowired
 	private ProjectsService projectsService;
 	@Autowired
-	private HonorDao honorDao;
+	private HonorService honorService;
 	@Autowired
 	private NewsDao newsDao;
 	@Autowired
-	private AddressDao addressDao;
+	private AddressService addressService;
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	private String index() {// 显示主页
@@ -108,8 +108,7 @@ public class MainPageController {
 	@ResponseBody
 	private Map<String, Object> getHonor(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
-
-		List<Honor> honorList = honorDao.queryHonor();
+		List<Honor> honorList = honorService.getHonor();
 		modelMap.put("honorList", honorList);
 		return modelMap;
 	}
@@ -143,7 +142,7 @@ public class MainPageController {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		if (request.getParameter("addid") != null) {
 			int addid = Integer.parseInt(request.getParameter("addid").toString());
-			Address add = addressDao.queryAddByID(addid);
+			Address add = addressService.getAdressByPrimId(addid);
 			modelMap.put("add", add);
 		}
 		return modelMap;
@@ -158,7 +157,7 @@ public class MainPageController {
 	@ResponseBody
 	private Map<String, Object> getAddressOt(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();	
-		List<Address> addList = addressDao.queryAddot();
+		List<Address> addList = addressService.getfiliale();
 		modelMap.put("addList", addList);
 		return modelMap;
 	}
