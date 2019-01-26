@@ -93,22 +93,22 @@ html, body {
 						</div>
 					</div>
 					<div class="cm-content">
-						<div class="cm-content-title">南宁市滨湖路1-3号金湖苑B座8单元616号</div>
+						<div class="cm-content-title parent-cpy1"></div>
 						<div style="width: 697px; height: 550px; border: #ccc solid 1px;"
 							id="dituContent1"></div>
-						<div class="cm-content-title">柳州市柳南区柳太路1号颐华城14栋1单元12层</div>
+						<div class="cm-content-title parent-cpy2"></div>
 
 						<div style="width: 697px; height: 550px; border: #ccc solid 1px;"
 							id="dituContent"></div>
 
 						<h3>总公司</h3>
-						南宁总部：南宁市滨湖路1-3号金湖苑8单元616号（530021）<br /> 服务热线：0771-5608816(FAX)<br />
-						柳州总部：柳州市柳南区柳工大道1号14栋1单元12楼（545007）<br /> 联系人：朱胜君（13307718377）<br />
-						服务热线：0772-3211777（FAX）<br /> E-Mail：LZDGDQ@163.COM<br /> 网
-						址：http://www.enterpriseportal.com<br />
-						<br />
+						<span class="parent-cpy1"></span><br />
+						<span id="cpy1-phone"> </span><br /> <span class="parent-cpy2">
+						</span><br /> 联系<span id="cpy2-phone"> </span><br /> <span
+							id="pcpy-email"></span><br /> 网
+						址：http://www.enterpriseportal.com<br /> <br />
 						<div id="cp-itemstt"></div>
-						
+
 					</div>
 
 				</div>
@@ -127,17 +127,18 @@ html, body {
 
 </body>
 <script type="text/javascript">
+	//创建和初始化地图函数：
 	function initMap() {
-		createMap();
-		setMapEvent();
-		addMapControl();
-		//addMarker();
+		createMap();//创建地图
+		setMapEvent();//设置地图事件
+		addMapControl();//向地图添加控件
 	}
 
+	//创建地图函数：
 	function createMap() {
 		var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-		var point = new BMap.Point(109.374102, 24.318243);//定义一个中心点坐标
-		map.centerAndZoom(point, 17);//设定地图的中心点和坐标并将地图显示在地图容器中
+		var point = new BMap.Point(116.395645, 39.929986);//定义一个中心点坐标
+		map.centerAndZoom(point, 12);//设定地图的中心点和坐标并将地图显示在地图容器中
 		window.map = map;//将map变量存储在全局
 	}
 
@@ -170,41 +171,19 @@ html, body {
 		map.addControl(ctrl_sca);
 	}
 
-	//文字标注数组
-	var lbPoints = [ {
-		point : "109.372979|24.31821",
-		content : "XXXXXXXXXXXXXXXXXXXXXXXX"
-	} ];
-	//向地图中添加文字标注函数
-	function addRemark() {
-		for (var i = 0; i < lbPoints.length; i++) {
-			var json = lbPoints[i];
-			var p1 = json.point.split("|")[0];
-			var p2 = json.point.split("|")[1];
-			var label = new BMap.Label("<div style='padding:2px;'>"
-					+ json.content + "</div>", {
-				point : new BMap.Point(p1, p2),
-				offset : new BMap.Size(3, -6)
-			});
-			map.addOverlay(label);
-			label.setStyle({
-				borderColor : "#999"
-			});
-		}
-	}
+	
 	//创建和初始化地图函数：
 	function initMap1() {
 		createMap1();//创建地图
 		setMapEvent1();//设置地图事件
 		addMapControl1();//向地图添加控件
-		addRemark1();//向地图中添加文字标注
 	}
 
 	//创建地图函数：
 	function createMap1() {
 		var map = new BMap.Map("dituContent1");//在百度地图容器中创建一个地图
-		var point = new BMap.Point(108.355102, 22.807746);//定义一个中心点坐标
-		map.centerAndZoom(point, 18);//设定地图的中心点和坐标并将地图显示在地图容器中
+		var point = new BMap.Point(116.395645, 39.929986);//定义一个中心点坐标
+		map.centerAndZoom(point, 12);//设定地图的中心点和坐标并将地图显示在地图容器中
 		window.map = map;//将map变量存储在全局
 	}
 
@@ -237,30 +216,8 @@ html, body {
 		map.addControl(ctrl_sca);
 	}
 
-	//文字标注数组
-	var lbPoints = [ {
-		point : "108.355475|22.807697",
-		content : "XXXXXXXXXXXXXXXXX"
-	} ];
-	//向地图中添加文字标注函数
-	function addRemark1() {
-		for (var i = 0; i < lbPoints.length; i++) {
-			var json = lbPoints[i];
-			var p1 = json.point.split("|")[0];
-			var p2 = json.point.split("|")[1];
-			var label = new BMap.Label("<div style='padding:2px;'>"
-					+ json.content + "</div>", {
-				point : new BMap.Point(p1, p2),
-				offset : new BMap.Size(3, -6)
-			});
-			map.addOverlay(label);
-			label.setStyle({
-				borderColor : "#999"
-			});
-		}
-	}
 
-	initMap1();//创建和初始化地图
-	initMap();//´´½¨ºÍ³õÊ¼»¯µØÍ¼
+	initMap1();
+	initMap();//创建和初始化地图
 </script>
 </html>
