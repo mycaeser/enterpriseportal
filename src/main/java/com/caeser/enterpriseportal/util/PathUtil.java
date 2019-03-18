@@ -12,7 +12,7 @@ public class PathUtil {
 		if (os.toLowerCase().startsWith("win")) {
 			basePath = "D:/eplimg/v1/";
 		} else {
-			basePath = "/home/roofso/image/";
+			basePath = "/opt/eplimg/image/";
 		}
 		basePath = basePath.replace("/", seperator);
 		return basePath;
