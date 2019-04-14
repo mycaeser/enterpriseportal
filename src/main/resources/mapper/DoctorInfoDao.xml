@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.enterpriseportal.dao.DoctorInfoDao">
+	<select id="queryDoctorInfoList" resultType="com.caeser.enterpriseportal.entity.DoctorInfo">
+		SELECT  aac801,aac802,aac803,aac804,aac805,aac806,aac807,aac808,aac809
+		FROM ac08
+	</select>
+	<select id="queryDoctorInfoById" resultType="com.caeser.enterpriseportal.entity.DoctorInfo">
+		SELECT  aac801,aac802,aac803,aac804,aac805,aac806,aac807,aac808,aac809
+		FROM ac08
+		WHERE
+		aac801=#{id}
+	</select>
+	<insert id="addDoctorInfo" useGeneratedKeys="true"
+		keyProperty="aac801" keyColumn="aac801">
+		INSERT INTO
+		ac08(aac802,aac803,aac804,aac805,aac806,aac807,aac808,aac809)
+		VALUES
+		(#{aac802},#{aac803},#{aac804},#{aac805},#{aac806},#{aac807},#{aac808},#{aac809})
+	</insert>
+	<update id="updateDoctorInfo" parameterType="com.caeser.enterpriseportal.entity.DoctorInfo">
+		update ac08
+		<set>
+			<if test="aac802 != null">aac802=#{aac802},</if>
+			<if test="aac803 != null">aac803=#{aac803},</if>
+			<if test="aac804 != null">aac804=#{aac804},</if>
+			<if test="aac805 != null">aac805=#{aac805},</if>
+			<if test="aac806 != null">aac806=#{aac806},</if>
+			<if test="aac807 != null">aac807=#{aac807},</if>
+			<if test="aac808 != null">aac808=#{aac808},</if>
+			<if test="aac809 != null">aac809=#{aac809}</if>
+		</set>
+		where aac801=#{aac801}
+	</update>
+	<delete id="deleteDoctorInfoById" parameterType="int">
+		DELETE FROM
+		ac08
+		WHERE aac801=#{id}
+	</delete>
+</mapper>
+    

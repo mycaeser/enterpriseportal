@@ -34,4 +34,6 @@ public interface NewsDao {
 	 * @return
 	 */
 	int updateNewsArticle(News item);
+	
+	int insertNews(News item);
 }

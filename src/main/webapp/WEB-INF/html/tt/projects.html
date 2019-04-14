@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <title>企业门户网站</title>
+    <title>医疗子系统</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
@@ -33,7 +33,7 @@
 <script type="text/javascript"
 	src="../resources/lib/raty/jquery.raty.js"></script>
 <script type="text/javascript" src="../resources/js/main.min.js?t=1"></script>
-<script type="text/javascript" src="../resources/js/ttprojects.js"></script>
+<script type="text/javascript" src="../resources/js/achat.js"></script>
 </head>
 <body>
     ﻿<header class="hd">
@@ -45,8 +45,8 @@
                 </a>
             </div>
             <div class="hd-company">
-                <strong>企业门户网站</strong>
-                <span>www.enterpriseportal.com</span>
+                <strong>医疗子系统</strong>
+                <span>www.hospitalsubsys.com</span>
             </div>   
         </div>
     </div>
@@ -58,11 +58,11 @@
         <ul class="hd-navul am-collapse" style="height: 0px;">
             <li
             ><a href="/enterpriseportal/frontend/index">首页</a></li>
-            <li><a href="/enterpriseportal/companygx/index?t=1">关于我们</a></li>
-            <li ><a href="/enterpriseportal/newstt/index?a=1&b=5">新闻资讯</a></li>
-            <li class="on"><a href="/enterpriseportal/projectstt/index?a=1&b=1>工程案例</a></li>
-            <li><a href="/enterpriseportal/projectstt/hr">人力资源</a>
-            <li><a href="/enterpriseportal/newstt/joinus">联系我们</a>
+            <li><a href="/enterpriseportal/companygx/index?t=1">医院信息</a></li>
+            <li ><a href="/enterpriseportal/newstt/index?a=1&b=5">医生简介</a></li>
+            <li class="on"><a href="/enterpriseportal/projectstt/index?a=1&b=1">在线咨询</a></li>
+            <li><a href="/enterpriseportal/projectstt/hr">预约挂号</a>
+            <li><a href="/enterpriseportal/vlogin/login">注册/登陆</a>
         </ul>
     </nav>
 </div>
@@ -72,21 +72,7 @@
                 <div class="cm-type">
                     <ul>
                         <li id="about-menu-a"
-                          ><a >弱电工程</a></li>
-                        <li id="about-menu-b"
-                          ><a >天网工程</a></li>
-                        <li id="about-menu-c"
-                          ><a >线路工程</a></li>
-                        <li id="about-menu-d"
-                          ><a >维护工程</a></li>
-                         <li id="about-menu-e"
-                          ><a >室分工程</a></li>
-                        <li id="about-menu-f"
-                          ><a >铁塔工程</a></li>
-                        <li id="about-menu-g"
-                          ><a >广电工程</a></li>
-                        <li id="about-menu-h"
-                          ><a >移动无线集成工程</a></li>
+                          ><a >在线咨询</a></li>
                         
                     </ul>
                 </div>
@@ -94,11 +80,25 @@
             <div class="am-u-sm-9 am-u-md-9 am-u-lg-9">
                    <div class="cm-article">
                        <div class="cm-title">
-                           <div class="cm-title-nav">当前位置：<span><a href="#">工程案例</a></span>><span id="location-c">
+                           <div class="cm-title-nav">当前位置：<span><a href="#">在线咨询</a></span>><span id="location-c">
                            </span></div>
                        </div>
                        <div class="cm-content">
+                       <ul class="cm-new-list-ul">
+                      <li>
+                       <span>张三：你好，请我</span>
+                       <i>2018-06-02 22:54</i>
+                      </li>
+                       </ul>
                            </div>
+                       <div class="password">
+                    <span class="mima">输入信息</span><input id="subMessage" type="text" placeholder="请输入咨询内容">
+                		咨询：<select class="select select-doctors" name="adminRole" size="1">
+				
+										</select>
+                		<input id="btn-login" type="button" value="提交">
+                		</div>
+                			
                        </div>
                    </div>
             </div>

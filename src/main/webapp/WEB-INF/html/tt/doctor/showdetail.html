@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查看医生详细信息</title>
+<link rel="stylesheet" id="templatecss" type="text/css" href=../resources/css/formstyle.css />
+<script type="text/javascript"
+	src="../resources/lib/jquery/jquery.min.js"></script>
+
+</head>
+<body>
+<form action="" method="post" class="smart-green">
+
+	
+		<label>
+			<span>头像 :</span>
+			<span id="photoImg"></span>
+		</label>
+		<label>
+			<span>姓名 :</span>
+			<input id="userName" type="text"  disabled="true" />
+		</label>
+		<label>
+			<span>手机号 :</span>
+			<input id="phoneNumber" type="text"  disabled="true" />
+		</label>
+		<label>
+			<span>身份证 :</span>
+			<input id="idCard" type="text"  disabled="true" />
+		</label>
+		<label>
+			<span>擅长领域 :</span>
+			<input id="workArea" type="text"  disabled="true" />
+		</label>
+		
+	</form>
+	<script>
+		function changeStyle() {
+	   var template = document.getElementById("template");
+     var index = template.selectedIndex;
+	   var templatevalue = template.options[index].value;
+	   var templatecss = document.getElementById("templatecss");
+	   templatecss.setAttribute("href","css/" + templatevalue + ".css");
+	   document.getElementsByTagName("form")[0].setAttribute("class",templatevalue);
+	 }
+	</script>
+	<script type="text/javascript" src="../resources/js/doctor/showdetail.js"></script>
+</body>
+</html>

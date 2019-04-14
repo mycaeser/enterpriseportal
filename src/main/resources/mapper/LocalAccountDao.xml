@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.enterpriseportal.dao.LocalAccountDao">
+	<select id="queryLocalAccountList" resultType="com.caeser.enterpriseportal.entity.LocalAccount">
+		SELECT  aac401,aac402,aac403,aac404,aac405,aac406,aac407
+		FROM ac04
+	</select>
+	<select id="queryLocalAccountById" resultType="com.caeser.enterpriseportal.entity.LocalAccount">
+		SELECT  aac401,aac402,aac403,aac404,aac405,aac406,aac407
+		FROM ac04
+		WHERE
+		aac401=#{id}
+	</select>
+	<select id="queryLocalAccountByAccountPass" resultType="com.caeser.enterpriseportal.entity.LocalAccount">
+		SELECT  aac401,aac402,aac403,aac404,aac405,aac406,aac407
+		FROM ac04
+		WHERE
+		aac402=#{account}
+		AND
+		aac403=#{pass}
+	</select>
+	<insert id="addLocalAccount" useGeneratedKeys="true"
+		keyProperty="Aac401" keyColumn="aac401">
+		INSERT INTO
+		ac04(aac402,aac403,aac404,aac405,aac406,aac407)
+		VALUES
+		(#{Aac402},#{Aac403},#{Aac404},#{Aac405},#{Aac406},#{Aac407})
+	</insert>
+	<delete id="deleteLocalAccountById" parameterType="int">
+		DELETE FROM
+		ac04
+		WHERE aac401=#{id}
+	</delete>
+</mapper>
+    

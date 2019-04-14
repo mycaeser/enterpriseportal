@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <title>企业门户网站</title>
+    <title>医疗子系统</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
@@ -45,8 +45,8 @@
                 </a>
             </div>
             <div class="hd-company">
-                <strong>企业门户网站</strong>
-                <span>www.enterpriseportal.com</span>
+                <strong>医疗子系统</strong>
+                <span>www.hospitalsubsys.com</span>
             </div>   
         </div>
     </div>
@@ -56,13 +56,12 @@
     <button class="am-show-sm-only am-collapsed" data-am-collapse="{target: '.hd-navul'}">&#xe68b;</button>
     <nav>
         <ul class="hd-navul am-collapse" style="height: 0px;">
-            <li
-            ><a href="/enterpriseportal/frontend/index">首页</a></li>
-            <li><a href="/enterpriseportal/companygx/index?t=1">关于我们</a></li>
-            <li class="on"><a href="/enterpriseportal/newstt/index?a=1&b=5">新闻资讯</a></li>
-            <li><a href="/enterpriseportal/projectstt/index?a=1&b=1">工程案例</a></li>
-            <li><a href="/enterpriseportal/projectstt/hr">人力资源</a>
-            <li><a href="/enterpriseportal/newstt/joinus">联系我们</a>
+            <li><a href="/enterpriseportal/frontend/index">首页</a></li>
+            <li><a href="/enterpriseportal/companygx/index?t=1">医院信息</a></li>
+            <li class="on"><a href="/enterpriseportal/newstt/index?a=1&b=5">医生简介</a></li>
+            <li  id="achatView"><a href="/enterpriseportal/projectstt/index?a=1&b=1">在线咨询</a></li>
+            <li id="regView" ><a href="/enterpriseportal/projectstt/hr">预约挂号</a></li>
+            <li id="loginView" ><a href="/enterpriseportal/vlogin/login" >注册/登陆 </a> </li>
         </ul>
     </nav>
 </div>
@@ -72,13 +71,13 @@
                 <div class="cm-type">
                     <ul>
                         <li id="about-menu-a"
-                          ><a >公司动态</a></li>
+                          ><a >医生简介</a></li>
                         <li id="about-menu-b"
-                          ><a >行业新闻</a></li>
+                          ><a >医疗新闻</a></li>
                         <li id="about-menu-c"
-                          ><a >通信知识</a></li>
+                          ><a >医疗知识</a></li>
                         <li id="about-menu-d"
-                          ><a >企业公告</a></li>
+                          ><a >健康宣教</a></li>
                         
                     </ul>
                 </div>
@@ -104,6 +103,7 @@
     <div class="cml-g">
       
     </div>
+    <script type="text/javascript" src="../resources/js/vlogin/viewname.js"></script>
 </footer>
 </body>
 </html>

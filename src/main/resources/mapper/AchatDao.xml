@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caeser.enterpriseportal.dao.AchatDao">
+	<select id="queryAchatList" resultType="com.caeser.enterpriseportal.entity.Achat">
+		SELECT  aac601,aac602,aac603,aac604,aac605
+		FROM ac06
+	</select>
+	<select id="queryAchatById" resultType="com.caeser.enterpriseportal.entity.Achat">
+		SELECT  aac601,aac602,aac603,aac604,aac605
+		FROM ac06
+		WHERE
+		aac601=#{id}
+	</select>
+	<insert id="addAchat" useGeneratedKeys="true"
+		keyProperty="Aac601" keyColumn="aac601">
+		INSERT INTO
+		ac06(aac602,aac603,aac604,aac605)
+		VALUES
+		(#{aac602},#{aac603},#{aac604},#{aac605})
+	</insert>
+	<update id="updateAchat" parameterType="com.caeser.enterpriseportal.entity.Achat">
+		update ac06
+		<set>
+			<if test="Aac602 != null">aac602=#{Aac602},</if>
+			<if test="Aac603 != null">aac603=#{Aac603},</if>
+			<if test="Aac604 != null">aac604=#{Aac604},</if>
+			<if test="Aac605 != null">aac605=#{Aac605}</if>
+		</set>
+		where aac601=#{Aac601}
+	</update>
+	<delete id="deleteAchatById" parameterType="int">
+		DELETE FROM
+		ac06
+		WHERE aac601=#{id}
+	</delete>
+</mapper>
+    

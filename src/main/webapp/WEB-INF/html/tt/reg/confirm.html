@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>就诊确认</title>
+<link rel="stylesheet" id="templatecss" type="text/css" href=../resources/css/formstyle.css />
+<script type="text/javascript"
+	src="../resources/lib/jquery/jquery.min.js"></script>
+</head>
+<body>
+<form action="" method="post" class="smart-green">
+<table class="table table-border table-bordered table-hover table-bg table-sort">
+    <thead>
+      <tr class="text-c">
+        <th width="20">ID</th>
+        <th width="50">用户名</th>
+        <th width="100">问题</th>
+        <th width="50">时间</th>
+       <th width="20">状态</th>
+      </tr>
+    </thead>
+    <tbody id="tableContent">
+     
+    </tbody>
+  </table>
+  <br />
+		
+			<span>回复哪一条:</span>
+			<select id="template1" name="themplate1" >
+				
+			</select>
+		</label>
+		<label>
+			<span>回复内容 :</span>
+			<input id="backcontent" type="text"  />
+		</label>
+		
+		
+		<label>
+			<span>&nbsp;</span>
+			<input type="button" class="button" value="Send" id="subButton" />
+		</label>
+	</form>
+	<script>
+		function changeStyle() {
+	   var template = document.getElementById("template");
+     var index = template.selectedIndex;
+	   var templatevalue = template.options[index].value;
+	   var templatecss = document.getElementById("templatecss");
+	   templatecss.setAttribute("href","css/" + templatevalue + ".css");
+	   document.getElementsByTagName("form")[0].setAttribute("class",templatevalue);
+	 }
+	</script>
+	<script type="text/javascript" src="../resources/js/vlogin/achatback.js"></script>
+</body>
+</html>

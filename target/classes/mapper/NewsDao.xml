@@ -30,6 +30,13 @@
 		WHERE
 		aac101=#{id}
 	</select>
+	<insert id="insertNews" useGeneratedKeys="true"
+		keyProperty="Aac101" keyColumn="aac101">
+		INSERT INTO
+		ac01(Aac102,Aac103,Aac104,Aac105,Aac109,Aac110,Aac111,Aac112,Aac113,Aac115,Aac116)
+		VALUES
+		(#{aac102},#{aac103},#{aac104},#{aac105},#{aac109},#{aac110},#{aac111},#{aac112},#{aac113},#{aac115},#{aac116})
+	</insert>
 	<update id="updateNewsArticle" parameterType="com.caeser.enterpriseportal.entity.News">
 		update ac01
 		<set>

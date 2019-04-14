@@ -84,6 +84,6 @@ public class DESUtil {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(getEncryptString("iop_A9263"));
+		System.out.println(getEncryptString("123456"));
 	}
 }

@@ -63,7 +63,7 @@ $(function() {
 	$('#about-menu-c').click(function(){
 		removeClassOnAll();
 		$('#about-menu-c').addClass('on');
-		$('#location-a').html('管理团队');
+		$('#location-a').html('健康宣教');
 		var viewHTML='<div class="prodoct-list" > <div class="am-u-sm-6 am-u-md-6 am-u-lg-3"> <a > <img src="'+imgUrlfix+teamList[0].aaa403+'"> <span class="f-toe">'+teamList[0].aaa404+'</span></a></div><div class="am-u-sm-6 am-u-md-6"><p>'+teamList[0].aaa402+'</p></div></div>';
 		viewHTML=viewHTML+'<div class="cm-page"> <ul id="pgmtt">';
 		var tmph='';
@@ -227,16 +227,55 @@ $(function() {
 	$('#about-menu-e').click(function(){
 		removeClassOnAll();
 		$('#about-menu-e').addClass('on');
-		$('#location-a').html('组织架构');
-		var viewHTML='<img src="'+imgUrlfix+'images/taitongjj08.png">';
+		$('#location-a').html('戒烟宣教');
+		var viewHTML='<video controls="controls" controls="controls"><source src="/images/smokevedio_20194603518.mp4" type="video/mp4" /></video>';
 		$('.cm-content').html(viewHTML);
 	});
 	$('#about-menu-f').click(function(){
 		removeClassOnAll();
 		$('#about-menu-f').addClass('on');
-		$('#location-a').html('合作伙伴');
-		var viewHTML='<img src="'+imgUrlfix+'images/hezuo.png">';
-		$('.cm-content').html(viewHTML);
+		$('#location-a').html('医生排班表');
+		$.ajaxSetup({async: false});
+		var getScheduletListUrl='/enterpriseportal/schedule/getschedulelist';
+		var getUserNameUrl='/enterpriseportal/newstt/getnews?typeid=1';
+		var viewHTML4=new Array();
+		$.getJSON(getScheduletListUrl,function(item,data){
+			var createdTime=new Date(); 
+			var y=createdTime.getFullYear(),m=createdTime.getMonth()+1,d=createdTime.getDate();
+			var scheduleObj=item.scheduleList;
+			var viewHTML1='';
+			var viewHTML2='';
+			var viewHTML3='';
+			var count=1;
+			
+			scheduleObj.map(function(item,data){
+				var date = new Date();
+				var month = date.getMonth()+1;
+				var year = date.getYear();
+				var d = new Date(year,month,0);    
+				var days = d.getDate();
+				//console.log(days);
+				viewHTML1=viewHTML1+'<td>'+item.aac702+'</td>';
+				viewHTML2=viewHTML2+'<th>'+m+'-'+count+'</th>';
+				if(count%7==0){
+					viewHTML3=viewHTML3+'<tr>'+viewHTML2+'</tr><tr>'+viewHTML1+'</tr>';
+					viewHTML1='';
+					viewHTML2='';
+				}
+				if(count>28){
+					if(count==days){
+						viewHTML3=viewHTML3+'<tr>'+viewHTML2+'</tr><tr>'+viewHTML1+'</tr>';
+						
+					}
+				}
+				if(count<=days){
+					viewHTML4[count-1]=m+'-'+count;
+				}
+				
+				count++;
+			});
+			$('.cm-content').html('<table border="1">'+viewHTML3+'</table>');
+		});
 	});
 	function removeClassOnAll(){
 		//移除所有的点击背景变蓝效果
